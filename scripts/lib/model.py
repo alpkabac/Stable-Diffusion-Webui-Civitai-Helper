@@ -3,8 +3,6 @@
 import os
 import json
 from . import util
-from modules import shared
-
 
 # this is the default root path
 root_path = os.getcwd()
