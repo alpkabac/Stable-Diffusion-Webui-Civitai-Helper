@@ -13,10 +13,10 @@ root_path = os.getcwd()
 # then model folder is in absolute path, not based on this root path anymore.
 # so to make extension work with those absolute model folder paths, model folder also need to be in absolute path
 folders = {
-    "ti": os.path.join(root_path, "embeddings"),
-    "hyper": os.path.join(root_path, "models", "hypernetworks"),
-    "ckp": os.path.join(root_path, "models", "Stable-diffusion"),
-    "lora": os.path.join(root_path, "models", "Lora"),
+    "ti": "/content/gdrive/MyDrive/sd/stable-diffusion-webui/embeddings",
+    "hyper": "/content/gdrive/MyDrive/sd/stable-diffusion-webui/models/hypernetworks",
+    "ckp": "/content/gdrive/MyDrive/sd/stable-diffusion-webui/models/Stable-diffusion",
+    "lora": "/content/gdrive/MyDrive/sd/stable-diffusion-webui/models/Lora",
 }
 
 exts = (".bin", ".pt", ".safetensors", ".ckpt")
@@ -31,16 +31,16 @@ def get_custom_model_folder():
     global folders
 
     if shared.cmd_opts.embeddings_dir and os.path.isdir(shared.cmd_opts.embeddings_dir):
-        folders["ti"] = shared.cmd_opts.embeddings_dir
+        folders["ti"] = "/content/gdrive/MyDrive/sd/stable-diffusion-webui/embeddings"
 
     if shared.cmd_opts.hypernetwork_dir and os.path.isdir(shared.cmd_opts.hypernetwork_dir):
-        folders["hyper"] = shared.cmd_opts.hypernetwork_dir
+        folders["hyper"] = "/content/gdrive/MyDrive/sd/stable-diffusion-webui/models/hypernetworks"
 
     if shared.cmd_opts.ckpt_dir and os.path.isdir(shared.cmd_opts.ckpt_dir):
-        folders["ckp"] = shared.cmd_opts.ckpt_dir
+        folders["ckp"] = "/content/gdrive/MyDrive/sd/stable-diffusion-webui/models/Stable-diffusion"
 
     if shared.cmd_opts.lora_dir and os.path.isdir(shared.cmd_opts.lora_dir):
-        folders["lora"] = shared.cmd_opts.lora_dir
+        folders["lora"] = "/content/gdrive/MyDrive/sd/stable-diffusion-webui/models/Lora"
 
 
 
